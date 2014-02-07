@@ -59,7 +59,14 @@ public class UiUtils {
         labelDemo.add(decorateLabel(new JLabel("my god man, the text field won't take much more of this... it could go all the way.")));
         labelDemo.add(decorateLabel(new JLabel("")));
         labelDemo.add(decorateLabel(new JLabel("can\nwe\ndo\nmulti-line\nlabel")));
-        labelDemo.pack();
+        try {
+          System.out.println("Sleep");
+          Thread.sleep(1000);
+          System.out.println("Awake");
+        } catch(Exception e) {
+          System.out.println("EEE: " + e);
+        }
+        newWindow.requestFocus();
 
       }
     } );//invokeLater
