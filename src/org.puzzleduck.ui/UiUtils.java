@@ -86,6 +86,12 @@ public class UiUtils {
 */
 
 
+// TODOs: checkbox, combo box, radio buttons,text area/field/pane
+//        color chooser?, dialogs, file chooser, jlist, progress bar
+//        scroll panes, sliders, spinners, tabs, tables, trees
+
+
+
   protected static JButton decorateButton(JButton button) {
     System.out.print("(b)");
     button.setBorder(defaultBorder);
