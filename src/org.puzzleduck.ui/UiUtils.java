@@ -47,13 +47,14 @@ public class UiUtils {
         System.out.println("new is Event Dispatch Thread?" + SwingUtilities.isEventDispatchThread());    
 
         JFrame newWindow = generateMainWindow(); 
-        JFrame anotherWindow1 = generateSubWindow(); 
-        JFrame anotherWindow2 = generateSubWindow(newWindow); 
+        JFrame buttonDemo = generateSubWindow(); 
+        JFrame labelDemo = generateSubWindow(newWindow); 
         newWindow.add(decorateLabel(new JLabel("Label")));
-        anotherWindow1.add(decorateButton(new JButton("Button")));
-        anotherWindow1.add(decorateButton(new JButton("zip")));
-        anotherWindow1.add(decorateButton(new JButton("long long button name")));
-        anotherWindow1.add(decorateButton(new JButton("who\nin their\nright mind\nwould do\nthis")));
+        buttonDemo.add(decorateButton(new JButton("Button")));
+        buttonDemo.add(decorateButton(new JButton("zip")));
+        buttonDemo.add(decorateButton(new JButton("long long button name")));
+        buttonDemo.add(decorateButton(new JButton("who\nin their\nright mind\nwould do\nthis")));
+        labelDemo.add(new JLabel("Test"));
 
       }
     } );//invokeLater
@@ -139,7 +140,7 @@ public class UiUtils {
     ((JComponent)pane).setBorder(defaultBorder);
     frame.setIconImage(puzzleIcon128.getImage());
     frame.add(setupDefaultMenus());
-    pane.add(new JLabel("Main Window"));
+    //pane.add(new JLabel("Main Window"));
     
     frame.setMinimumSize(new Dimension(300,100));
     frame.setPreferredSize(new Dimension(500,300));
@@ -160,8 +161,6 @@ public class UiUtils {
     ((JComponent)pane).setBorder(defaultBorder);
     frame.setIconImage(puzzleIcon128.getImage());
     
-    pane.add(new JLabel("Sub Window"));
-    
     frame. setPreferredSize(new Dimension(250,500));
     frame.pack();
     frame.setVisible(true);
@@ -177,7 +176,6 @@ public class UiUtils {
     ((JComponent)pane).setBorder(defaultBorder);
     frame.setIconImage(puzzleIcon128.getImage());
     
-    pane.add(new JLabel("Child Window"));
     //place under parent component ... woot, works on the EDT
     frame.setLocation((int)parent.getLocation().getY(),(int)parent.getLocation().getX()+parent.getHeight());
 
