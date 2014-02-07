@@ -91,16 +91,19 @@ public class UiUtils {
 */
 
 
-// TODOs: checkbox, , radio buttons,text area/field/pane
+// TODOs: checkbox, , ,text area/field/pane
 //        color chooser?, dialogs, file chooser, jlist, progress bar
 //        scroll panes, sliders, spinners, tabs, tables, trees
+
+  protected static JRadioButton decorateRadio(JRadioButton radio) {
+  
+  }
 
   protected static JComboBox decorateCombo(JComboBox combo) {
     combo.setBorder(defaultBorder);
     combo.setBackground(bone);
     combo.setForeground(purple);
     combo.setFont(kirsty);
-//    combo.setIcon(puzzleIcon16);
     combo.setMaximumSize(new Dimension((int)combo.getPreferredSize().getWidth()*2,(int)combo.getPreferredSize().getHeight()));
     return combo;
   }
