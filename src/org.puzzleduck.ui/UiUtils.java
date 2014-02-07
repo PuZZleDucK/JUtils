@@ -49,6 +49,7 @@ public class UiUtils {
         JFrame newWindow = generateMainWindow(); 
         JFrame buttonDemo = generateSubWindow(); 
         JFrame labelDemo = generateSubWindow(newWindow); 
+        JFrame comboDemo = generateSubWindow(newWindow); 
         newWindow.add(decorateLabel(new JLabel("Main Window")));
         buttonDemo.add(decorateButton(new JButton("Button")));
         buttonDemo.add(decorateButton(new JButton("zip")));
@@ -59,6 +60,8 @@ public class UiUtils {
         labelDemo.add(decorateLabel(new JLabel("my god man, the text field won't take much more of this... it could go all the way.")));
         labelDemo.add(decorateLabel(new JLabel("")));
         labelDemo.add(decorateLabel(new JLabel("can\nwe\ndo\nmulti-line\nlabel")));
+        String[] comboModel = new String[] {"spades", "hearts", "diamonds", "clubs"};
+        comboDemo.add(decorateCombo(new JComboBox(comboModel)));
         try {
           System.out.println("Sleep");
           Thread.sleep(1000);
@@ -86,14 +89,21 @@ public class UiUtils {
 */
 
 
-// TODOs: checkbox, combo box, radio buttons,text area/field/pane
+// TODOs: checkbox, , radio buttons,text area/field/pane
 //        color chooser?, dialogs, file chooser, jlist, progress bar
 //        scroll panes, sliders, spinners, tabs, tables, trees
 
-
+  protected static JComboBox decorateCombo(JComboBox combo) {
+    combo.setBorder(defaultBorder);
+    combo.setBackground(bone);
+    combo.setForeground(purple);
+    combo.setFont(kirsty);
+//    combo.setIcon(puzzleIcon16);
+    combo.setMaximumSize(new Dimension((int)combo.getPreferredSize().getWidth()*2,(int)combo.getPreferredSize().getHeight()));
+    return combo;
+  }
 
   protected static JButton decorateButton(JButton button) {
-    System.out.print("(b)");
     button.setBorder(defaultBorder);
     button.setBackground(bone);
     button.setForeground(purple);
