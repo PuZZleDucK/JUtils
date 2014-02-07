@@ -26,9 +26,8 @@ public class UiUtils {
   private static final ImageIcon puzzleIcon64 = new ImageIcon("res/puzzle64.png","puzzle piece");
   private static final ImageIcon puzzleIcon32 = new ImageIcon("res/puzzle32.png","puzzle piece");
   private static final ImageIcon puzzleIcon16 = new ImageIcon("res/puzzle16.png","puzzle piece");
-;
-  //Static init block?    //UI color hacks for tabs -- must fire early
-  static {
+
+  static { //UI color hacks for tabs -- must fire early
     UIManager.put("TabbedPane.selected", yellow);
     UIManager.put("TabbedPane.contentAreaColor",purple);
     UIManager.put("TabbedPane.borderColor", purple);
@@ -37,7 +36,6 @@ public class UiUtils {
     UIManager.put("TabbedPane.selectHighlight", purple);
     UIManager.put("TabbedPane.tabAreaBackground", purple);
     UIManager.put("TabbedPane.borderHightlightColor", purple);
-
   }
 
   public static void main(String args[]) {
@@ -47,7 +45,6 @@ public class UiUtils {
     java.awt.EventQueue.invokeLater(new Runnable() {
       public void run() {
         System.out.println("new is Event Dispatch Thread?" + SwingUtilities.isEventDispatchThread());    
-//        new frame.setVisible(true);
 
         JFrame newWindow = generateMainWindow(); 
         JFrame anotherWindow1 = generateSubWindow(); 
@@ -59,14 +56,11 @@ public class UiUtils {
         anotherWindow1.add(decorateButton(new JButton("who\nin their\nright mind\nwould do\nthis")));
 
       }
-    } );
-//    newWindow.invalidate();  //maybe EDT actually
-  }
+    } );//invokeLater
+  }//main
 
 /*
-  private JMenuBar setupMenus() {
-  private JMenu setupMenu();
-  
+
   protected static void decorateMenu(JMenu inputMenu) {
   protected static void setupMenuItem(JMenuItem inputMenuItem) {
   	protected static void setupPanel(JPanel inputPanel, String title) {
@@ -194,7 +188,6 @@ public class UiUtils {
     //place under parent component ... woot, works on the EDT
     frame.setLocation((int)parent.getLocation().getY(),(int)parent.getLocation().getX()+parent.getHeight());
 
-    //frame.setMinimumSize(new Dimension(300,100));
     frame. setPreferredSize(new Dimension(parent.getWidth(),parent.getHeight()));
     frame.pack();
     frame.setVisible(true);
@@ -216,13 +209,6 @@ public class UiUtils {
     inputMenuItem.setBackground(bone);
     inputMenuItem.setIcon(puzzleIcon16);
   }
-
-
-
-
-
-
-
 
 
 
