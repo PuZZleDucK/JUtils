@@ -124,15 +124,11 @@ public class UiUtils {
     menuBar.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED, purple, white));
     menuBar.setBackground(bone);
     menuBar.setMaximumSize(new Dimension(3200, (int)menuBar.getPreferredSize().getHeight()));
-    //menuBar.setPreferredSize(new Dimension(3200, (int)menuBar.getPreferredSize().getHeight()));
     menuBar.setToolTipText("It's a menu... men it you!"); 
   
     return menuBar;
   }
 
-//setIconImage(Image image)
-     //setLocation(Point p)
-     //Component.setBounds(int, int, int, int), Component.invalidate()
   protected static JFrame generateMainWindow() {
     System.out.println("generateMainWindow is Event Dispatch Thread?" + SwingUtilities.isEventDispatchThread());
     JFrame frame = new JFrame("::PuZZleDucK::"); //Default title
@@ -147,10 +143,8 @@ public class UiUtils {
     
     frame.setMinimumSize(new Dimension(300,100));
     frame.setPreferredSize(new Dimension(500,300));
-//    frame.setSize(new Dimension(700,500));
     
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    //frame.setLocationByPlatform(true);//allow window manager to place me, for now
     frame.pack();
     frame.setVisible(true);
     return frame;
@@ -168,7 +162,6 @@ public class UiUtils {
     
     pane.add(new JLabel("Sub Window"));
     
-    //frame.setMinimumSize(new Dimension(300,100));
     frame. setPreferredSize(new Dimension(250,500));
     frame.pack();
     frame.setVisible(true);
