@@ -99,23 +99,23 @@ public class UiUtils {
     JMenuBar menuBar = new JMenuBar();
     
     JMenu fileMenu = new JMenu("File");
-    setupMenu(fileMenu);
+    decorateMenu(fileMenu);
       JMenuItem exitMI = new JMenuItem("Quit", KeyEvent.VK_Q);
-      setupMenuItem(exitMI);
+      decorateMenuItem(exitMI);
       fileMenu.add(exitMI);
       JMenuItem newMI = new JMenuItem("New Tab", KeyEvent.VK_N);
-      setupMenuItem(newMI);
+      decorateMenuItem(newMI);
       fileMenu.add(newMI);
     JMenu editMenu = new JMenu("Edit");
-    setupMenu(editMenu);
+    decorateMenu(editMenu);
       JMenuItem saveMI = new JMenuItem("Save data", KeyEvent.VK_S);
-      setupMenuItem(saveMI);
+      decorateMenuItem(saveMI);
       editMenu.add(saveMI);
       JMenuItem logMI = new JMenuItem("Log Data", KeyEvent.VK_L);
-      setupMenuItem(logMI);
+      decorateMenuItem(logMI);
       editMenu.add(logMI);
     JMenu helpMenu = new JMenu("Help");
-    setupMenu(helpMenu);
+    decorateMenu(helpMenu);
 
     menuBar.add(fileMenu);
     menuBar.add(editMenu);
@@ -196,14 +196,14 @@ public class UiUtils {
 
 
 
-  protected static void setupMenu(JMenu inputMenu) {
+  protected static void decorateMenu(JMenu inputMenu) {
     inputMenu.setFont(kirstySmall);
     inputMenu.setForeground(purple);
     inputMenu.setBackground(bone);
     inputMenu.setIcon(puzzleIcon16);
   }
 
-  protected static void setupMenuItem(JMenuItem inputMenuItem) {
+  protected static void decorateMenuItem(JMenuItem inputMenuItem) {
     inputMenuItem.setFont(kirstySmall);
     inputMenuItem.setForeground(purple);
     inputMenuItem.setBackground(bone);
