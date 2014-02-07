@@ -60,8 +60,10 @@ public class UiUtils {
         labelDemo.add(decorateLabel(new JLabel("my god man, the text field won't take much more of this... it could go all the way.")));
         labelDemo.add(decorateLabel(new JLabel("")));
         labelDemo.add(decorateLabel(new JLabel("can\nwe\ndo\nmulti-line\nlabel")));
-        String[] comboModel = new String[] {"spades", "hearts", "diamonds", "clubs"};
+        String[] comboModel = {"spades", "hearts", "diamonds", "clubs"};
         comboDemo.add(decorateCombo(new JComboBox(comboModel)));
+        ImageIcon[] imgComboModel = {puzzleIcon128, puzzleIcon64, puzzleIcon32, puzzleIcon16};
+        comboDemo.add(decorateCombo(new JComboBox(imgComboModel)));
         try {
           System.out.println("Sleep");
           Thread.sleep(1000);
