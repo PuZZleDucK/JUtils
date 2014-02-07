@@ -49,12 +49,17 @@ public class UiUtils {
         JFrame newWindow = generateMainWindow(); 
         JFrame buttonDemo = generateSubWindow(); 
         JFrame labelDemo = generateSubWindow(newWindow); 
-        newWindow.add(decorateLabel(new JLabel("Label")));
+        newWindow.add(decorateLabel(new JLabel("Main Window")));
         buttonDemo.add(decorateButton(new JButton("Button")));
         buttonDemo.add(decorateButton(new JButton("zip")));
         buttonDemo.add(decorateButton(new JButton("long long button name")));
         buttonDemo.add(decorateButton(new JButton("who\nin their\nright mind\nwould do\nthis")));
-        labelDemo.add(new JLabel("Test"));
+        labelDemo.add(decorateLabel(new JLabel("Test")));
+        labelDemo.add(decorateLabel(new JLabel("Longish Label")));
+        labelDemo.add(decorateLabel(new JLabel("my god man, the text field won't take much more of this... it could go all the way.")));
+        labelDemo.add(decorateLabel(new JLabel("")));
+        labelDemo.add(decorateLabel(new JLabel("can\nwe\ndo\nmulti-line\nlabel")));
+        labelDemo.pack();
 
       }
     } );//invokeLater
@@ -81,7 +86,7 @@ public class UiUtils {
     button.setForeground(purple);
     button.setFont(kirsty);
     button.setMaximumSize(new Dimension((int)button.getPreferredSize().getWidth()*2,(int)button.getPreferredSize().getHeight()));
-    button.setMaximumSize(new Dimension((int)button.getMaximumSize().getWidth(),(int)button.getPreferredSize().getHeight()));
+//    button.setMaximumSize(new Dimension((int)button.getMaximumSize().getWidth(),(int)button.getPreferredSize().getHeight()));
     button.setIcon(puzzleIcon16);
     return button;
   }
@@ -92,6 +97,7 @@ public class UiUtils {
     label.setForeground(purple);
     label.setFont(kirsty);
     label.setIcon(puzzleIcon16);
+    label.setMaximumSize(new Dimension((int)label.getPreferredSize().getWidth(),(int)label.getMaximumSize().getHeight()));
     return label;
   }
 
@@ -171,6 +177,7 @@ public class UiUtils {
     JFrame frame = new JFrame("::Child SubWindow::"); //Default title
     frame.setUndecorated(true); //sub window
     Container pane = frame.getContentPane();
+    pane.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.PAGE_AXIS));
     frame.setForeground(purple);
     frame.setBackground(bone);
     ((JComponent)pane).setBorder(defaultBorder);
