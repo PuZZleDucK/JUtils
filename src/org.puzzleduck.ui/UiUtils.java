@@ -48,10 +48,11 @@ public class UiUtils {
 
         JFrame newWindow = generateMainWindow("Main Window");
         JFrame buttonDemo = generateSubWindow("Button (parentless)");
-        JFrame labelDemo = generateSubWindow(newWindow, "Labels"); 
-        JFrame comboDemo = generateSubWindow(newWindow, "Comination boxes"); 
+        JFrame labelDemo = generateSubWindow(newWindow, "Labels");
+        JFrame comboDemo = generateSubWindow(newWindow, "Comination Boxes");
+        JFrame radioDemo = generateSubWindow(newWindow, "Radio Boxes");
         
-        newWindow.add(decorateLabel(new JLabel("Main Window")));
+//        newWindow.add(decorateLabel(new JLabel("Main Window")));
         buttonDemo.add(decorateButton(new JButton("Button")));
         buttonDemo.add(decorateButton(new JButton("zip")));
         buttonDemo.add(decorateButton(new JButton("long long button name")));
@@ -65,6 +66,13 @@ public class UiUtils {
         comboDemo.add(decorateCombo(new JComboBox<String>(comboModel)));
         ImageIcon[] imgComboModel = {puzzleIcon128, puzzleIcon64, puzzleIcon32, puzzleIcon16};
         comboDemo.add(decorateCombo(new JComboBox<ImageIcon>(imgComboModel)));
+        
+        ButtonGroup radioGroup1 = new ButtonGroup();
+        radioDemo.add(decorateRadio(new JRadioButton("Spades"), radioGroup1));
+        radioDemo.add(decorateRadio(new JRadioButton("Hearts"), radioGroup1));
+        radioDemo.add(decorateRadio(new JRadioButton("Diamonds"), radioGroup1));
+        radioDemo.add(decorateRadio(new JRadioButton("Clubs"), radioGroup1));
+        
         try {
           System.out.println("Sleep");
           Thread.sleep(1000);
@@ -96,8 +104,8 @@ public class UiUtils {
 //        color chooser?, dialogs, file chooser, jlist, progress bar
 //        scroll panes, sliders, spinners, tabs, tables, trees
 
-  protected static JRadioButton decorateRadio(JRadioButton radio) {
-  
+  protected static JRadioButton decorateRadio(JRadioButton radio, ButtonGroup radioGroup) {
+    radioGroup.add(radio);
     return radio;
   }
 
