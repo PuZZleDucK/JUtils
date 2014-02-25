@@ -46,10 +46,11 @@ public class UiUtils {
       public void run() {
         System.out.println("new is Event Dispatch Thread?" + SwingUtilities.isEventDispatchThread());    
 
-        JFrame newWindow = generateMainWindow(); 
-        JFrame buttonDemo = generateSubWindow(); 
-        JFrame labelDemo = generateSubWindow(newWindow); 
-        JFrame comboDemo = generateSubWindow(newWindow); 
+        JFrame newWindow = generateMainWindow("Main Window");
+        JFrame buttonDemo = generateSubWindow("Button (parentless)");
+        JFrame labelDemo = generateSubWindow(newWindow, "Labels"); 
+        JFrame comboDemo = generateSubWindow(newWindow, "Comination boxes"); 
+        
         newWindow.add(decorateLabel(new JLabel("Main Window")));
         buttonDemo.add(decorateButton(new JButton("Button")));
         buttonDemo.add(decorateButton(new JButton("zip")));
@@ -165,7 +166,7 @@ public class UiUtils {
     return menuBar;
   }
 
-  protected static JFrame generateMainWindow() {
+  protected static JFrame generateMainWindow(String title) {
     System.out.println("generateMainWindow is Event Dispatch Thread?" + SwingUtilities.isEventDispatchThread());
     JFrame frame = new JFrame("::PuZZleDucK::"); //Default title
     Container pane = frame.getContentPane();
@@ -186,7 +187,7 @@ public class UiUtils {
     return frame;
   }
   
-  protected static JFrame generateSubWindow() {
+  protected static JFrame generateSubWindow(String title) {
     JFrame frame = new JFrame("::SubWindow::"); //Default title... n/a for undecorated
     frame.setUndecorated(true); //sub window
     Container pane = frame.getContentPane();
@@ -202,7 +203,7 @@ public class UiUtils {
     return frame;
   }
   
-  protected static JFrame generateSubWindow(JFrame parent) {
+  protected static JFrame generateSubWindow(JFrame parent, String title) {
     JFrame frame = new JFrame("::Child SubWindow::"); //Default title
     frame.setUndecorated(true); //sub window
     Container pane = frame.getContentPane();
