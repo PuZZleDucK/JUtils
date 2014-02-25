@@ -68,10 +68,12 @@ public class UiUtils {
         comboDemo.add(decorateCombo(new JComboBox<ImageIcon>(imgComboModel)));
         
         ButtonGroup radioGroup1 = new ButtonGroup();
-        radioDemo.add(decorateRadio(new JRadioButton("Spades"), radioGroup1));
-        radioDemo.add(decorateRadio(new JRadioButton("Hearts"), radioGroup1));
-        radioDemo.add(decorateRadio(new JRadioButton("Diamonds"), radioGroup1));
-        radioDemo.add(decorateRadio(new JRadioButton("Clubs"), radioGroup1));
+        JPanel radioPanel1 = new JPanel();
+        radioPanel1.add(decorateRadio(new JRadioButton("Spades"), radioGroup1));
+        radioPanel1.add(decorateRadio(new JRadioButton("Hearts"), radioGroup1));
+        radioPanel1.add(decorateRadio(new JRadioButton("Diamonds"), radioGroup1));
+        radioPanel1.add(decorateRadio(new JRadioButton("Clubs"), radioGroup1));
+        radioDemo.add(decoratePanel(radioPanel1, "Suit?"));
         
         try {
           System.out.println("Sleep");
@@ -103,6 +105,18 @@ public class UiUtils {
 // TODOs: checkbox, , ,text area/field/pane
 //        color chooser?, dialogs, file chooser, jlist, progress bar
 //        scroll panes, sliders, spinners, tabs, tables, trees
+
+  protected static JPanel decoratePanel(JPanel panel) {
+    panel.setBorder(defaultBorder);
+    panel.setMaximumSize(new Dimension((int)panel.getPreferredSize().getWidth(),(int)panel.getPreferredSize().getHeight()));
+    return panel;
+  }
+  
+  protected static JPanel decoratePanel(JPanel panel, String title) {
+    panel.setBorder(new TitledBorder(defaultBorder, title));
+    panel.setMaximumSize(new Dimension((int)panel.getPreferredSize().getWidth(),(int)panel.getPreferredSize().getHeight()));
+    return panel;
+  }
 
   protected static JRadioButton decorateRadio(JRadioButton radio, ButtonGroup radioGroup) {
     radioGroup.add(radio);
