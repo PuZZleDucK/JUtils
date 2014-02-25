@@ -173,7 +173,8 @@ public class UiUtils {
     pane.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.PAGE_AXIS));
     frame.setForeground(purple);
     frame.setBackground(bone);
-    ((JComponent)pane).setBorder(defaultBorder);
+//    ((JComponent)pane).setBorder(defaultBorder);
+    ((JComponent)pane).setBorder(new TitledBorder(defaultBorder, title));
     frame.setIconImage(puzzleIcon128.getImage());
     frame.add(setupDefaultMenus());
     //pane.add(new JLabel("Main Window"));
@@ -194,7 +195,7 @@ public class UiUtils {
     pane.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.PAGE_AXIS));
     frame.setForeground(purple);
     frame.setBackground(bone);
-    ((JComponent)pane).setBorder(defaultBorder);
+    ((JComponent)pane).setBorder(new TitledBorder(defaultBorder, title));
     frame.setIconImage(puzzleIcon128.getImage());
     
     frame. setPreferredSize(new Dimension(250,500));
@@ -210,7 +211,7 @@ public class UiUtils {
     pane.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.PAGE_AXIS));
     frame.setForeground(purple);
     frame.setBackground(bone);
-    ((JComponent)pane).setBorder(defaultBorder);
+    ((JComponent)pane).setBorder(new TitledBorder(defaultBorder, title));
     frame.setIconImage(puzzleIcon128.getImage());
     
     //place under parent component ... woot, works on the EDT
