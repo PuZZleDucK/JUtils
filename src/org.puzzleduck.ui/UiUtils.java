@@ -108,17 +108,28 @@ public class UiUtils {
 
   protected static JPanel decoratePanel(JPanel panel) {
     panel.setBorder(defaultBorder);
+    panel.setBackground(bone);
+    panel.setForeground(purple);
+    panel.setFont(kirsty);
     panel.setMaximumSize(new Dimension((int)panel.getPreferredSize().getWidth(),(int)panel.getPreferredSize().getHeight()));
     return panel;
   }
   
   protected static JPanel decoratePanel(JPanel panel, String title) {
     panel.setBorder(new TitledBorder(defaultBorder, title));
+    panel.setBackground(bone);
+    panel.setForeground(purple);
+    panel.setFont(kirsty);
     panel.setMaximumSize(new Dimension((int)panel.getPreferredSize().getWidth(),(int)panel.getPreferredSize().getHeight()));
     return panel;
   }
 
   protected static JRadioButton decorateRadio(JRadioButton radio, ButtonGroup radioGroup) {
+    radio.setBorder(defaultBorder);
+    radio.setBackground(bone);
+    radio.setForeground(purple);
+    radio.setFont(kirsty);
+
     radioGroup.add(radio);
     return radio;
   }
