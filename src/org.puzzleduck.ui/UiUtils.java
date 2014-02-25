@@ -74,6 +74,14 @@ public class UiUtils {
         radioPanel1.add(decorateRadio(new JRadioButton("Diamonds"), radioGroup1));
         radioPanel1.add(decorateRadio(new JRadioButton("Clubs"), radioGroup1));
         radioDemo.add(decoratePanel(radioPanel1, "Suit?"));
+
+        ButtonGroup radioGroup2 = new ButtonGroup();
+        JPanel radioPanel2 = new JPanel();
+        radioPanel2.add(decorateRadio(new JRadioButton("", puzzleIcon128), radioGroup2));
+        radioPanel2.add(decorateRadio(new JRadioButton("", puzzleIcon64), radioGroup2));
+        radioPanel2.add(decorateRadio(new JRadioButton("", puzzleIcon32), radioGroup2));
+        radioPanel2.add(decorateRadio(new JRadioButton("", puzzleIcon16), radioGroup2));
+        radioDemo.add(decoratePanel(radioPanel2, "Icon Size?"));
         
         try {
           System.out.println("Sleep");
