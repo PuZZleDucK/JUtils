@@ -97,6 +97,7 @@ public class UiUtils {
 
   protected static JRadioButton decorateRadio(JRadioButton radio) {
   
+    return radio;
   }
 
   protected static JComboBox decorateCombo(JComboBox combo) {
