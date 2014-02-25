@@ -61,9 +61,9 @@ public class UiUtils {
         labelDemo.add(decorateLabel(new JLabel("")));
         labelDemo.add(decorateLabel(new JLabel("can\nwe\ndo\nmulti-line\nlabel")));
         String[] comboModel = {"spades", "hearts", "diamonds", "clubs"};
-        comboDemo.add(decorateCombo(new JComboBox(comboModel)));
+        comboDemo.add(decorateCombo(new JComboBox<String>(comboModel)));
         ImageIcon[] imgComboModel = {puzzleIcon128, puzzleIcon64, puzzleIcon32, puzzleIcon16};
-        comboDemo.add(decorateCombo(new JComboBox(imgComboModel)));
+        comboDemo.add(decorateCombo(new JComboBox<ImageIcon>(imgComboModel)));
         try {
           System.out.println("Sleep");
           Thread.sleep(1000);
@@ -100,7 +100,7 @@ public class UiUtils {
     return radio;
   }
 
-  protected static JComboBox decorateCombo(JComboBox combo) {
+  protected static JComboBox<? extends Object> decorateCombo(JComboBox<? extends Object> combo) {
     combo.setBorder(defaultBorder);
     combo.setBackground(bone);
     combo.setForeground(purple);
