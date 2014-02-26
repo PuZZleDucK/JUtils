@@ -107,6 +107,10 @@ public class UiUtils {
 // TODOs: checkbox, , ,text area/field/pane
 //        color chooser?, dialogs, file chooser, jlist, progress bar
 //        scroll panes, sliders, spinners, tabs, tables, trees
+  
+  protected static JTextField decorateTextField(JTextField textField) {
+  
+  }
 
   protected static JPanel decoratePanel(JPanel panel) {
     panel.setBorder(defaultBorder);
