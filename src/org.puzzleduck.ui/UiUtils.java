@@ -102,18 +102,6 @@ public class UiUtils {
     } );//invokeLater
   }//main
 
-/*
-
-  protected static void decorateMenu(JMenu inputMenu) {
-  protected static void setupMenuItem(JMenuItem inputMenuItem) {
-  	protected static void setupPanel(JPanel inputPanel, String title) {
-  	protected static JLabel setupLabel(String title) {
-  	protected static JButton setupButton(String title) {
-  	
-
-
-
-*/
 
 
 // TODOs: checkbox, , ,text area/field/pane
