@@ -77,11 +77,17 @@ public class UiUtils {
 
         ButtonGroup radioGroup2 = new ButtonGroup();
         JPanel radioPanel2 = new JPanel();
-        radioPanel2.add(decorateRadio(new JRadioButton("", puzzleIcon128), radioGroup2));
-        radioPanel2.add(decorateRadio(new JRadioButton("", puzzleIcon64), radioGroup2));
-        radioPanel2.add(decorateRadio(new JRadioButton("", puzzleIcon32), radioGroup2));
-        radioPanel2.add(decorateRadio(new JRadioButton("", puzzleIcon16), radioGroup2));
+        radioPanel2.add(decorateRadio(new JRadioButton(""), radioGroup2));
+        radioPanel2.add(new JLabel(puzzleIcon128));
+        radioPanel2.add(decorateRadio(new JRadioButton(""), radioGroup2));
+        radioPanel2.add(new JLabel(puzzleIcon64));
+        radioPanel2.add(decorateRadio(new JRadioButton(""), radioGroup2));
+        radioPanel2.add(new JLabel(puzzleIcon32));
+        radioPanel2.add(decorateRadio(new JRadioButton(""), radioGroup2));
+        radioPanel2.add(new JLabel(puzzleIcon16));
         radioDemo.add(decoratePanel(radioPanel2, "Icon Size?"));
+        
+        
         
         try {
           System.out.println("Sleep");
