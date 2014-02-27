@@ -51,6 +51,7 @@ public class UiUtils {
         JFrame labelDemo = generateSubWindow(newWindow, "Labels");
         JFrame comboDemo = generateSubWindow(newWindow, "Comination Boxes");
         JFrame radioDemo = generateSubWindow(newWindow, "Radio Boxes");
+        JFrame textDemo = generateSubWindow(newWindow, "Text Fields");
         
 //        newWindow.add(decorateLabel(new JLabel("Main Window")));
         buttonDemo.add(decorateButton(new JButton("Button")));
@@ -87,6 +88,10 @@ public class UiUtils {
         radioPanel2.add(new JLabel(puzzleIcon16));
         radioDemo.add(decoratePanel(radioPanel2, "Icon Size?"));
         
+        textDemo.add(decorateTextField(new JTextField("Demo Text.")));
+        textDemo.add(decorateTextField(new JPasswordField("Secret.")));
+        textDemo.add(decorateTextField(new JFormattedTextField("Format me?")));
+        
         
         
         try {
@@ -109,7 +114,13 @@ public class UiUtils {
 //        scroll panes, sliders, spinners, tabs, tables, trees
   
   protected static JTextField decorateTextField(JTextField textField) {
-  
+    textField.setBorder(defaultBorder);
+    textField.setBackground(bone);
+    textField.setForeground(purple);
+    textField.setFont(kirsty);
+    textField.setMaximumSize(new Dimension((int)textField.getPreferredSize().getWidth(),(int)textField.getPreferredSize().getHeight()));
+
+    return textField;
   }
 
   protected static JPanel decoratePanel(JPanel panel) {
